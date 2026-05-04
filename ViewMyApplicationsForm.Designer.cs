@@ -34,7 +34,9 @@
             btnBack = new Button();
             btnEdit = new Button();
             btnDeleteApplication = new Button();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvMyApplications).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // dgvMyApplications
@@ -57,11 +59,10 @@
             dgvMyApplications.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvMyApplications.ColumnHeadersHeight = 40;
             dgvMyApplications.Cursor = Cursors.Hand;
+            dgvMyApplications.Dock = DockStyle.Bottom;
             dgvMyApplications.EnableHeadersVisualStyles = false;
             dgvMyApplications.GridColor = Color.Black;
-            dgvMyApplications.Location = new Point(12, 58);
-            dgvMyApplications.MaximumSize = new Size(1238, 600);
-            dgvMyApplications.MinimumSize = new Size(1238, 90);
+            dgvMyApplications.Location = new Point(0, 100);
             dgvMyApplications.Name = "dgvMyApplications";
             dgvMyApplications.ReadOnly = true;
             dgvMyApplications.RowHeadersVisible = false;
@@ -70,7 +71,7 @@
             dgvMyApplications.RowTemplate.DefaultCellStyle.SelectionForeColor = SystemColors.ControlText;
             dgvMyApplications.RowTemplate.Height = 40;
             dgvMyApplications.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMyApplications.Size = new Size(1238, 600);
+            dgvMyApplications.Size = new Size(1262, 573);
             dgvMyApplications.TabIndex = 0;
             // 
             // btnBack
@@ -81,30 +82,29 @@
             btnBack.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btnBack.FlatAppearance.MouseOverBackColor = Color.Black;
             btnBack.FlatStyle = FlatStyle.Flat;
-            btnBack.Font = new Font("Gadugi", 33F, FontStyle.Bold);
+            btnBack.Font = new Font("Gadugi", 38F, FontStyle.Bold);
             btnBack.ForeColor = Color.White;
             btnBack.Location = new Point(0, -13);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(100, 65);
+            btnBack.Size = new Size(100, 113);
             btnBack.TabIndex = 1;
             btnBack.Text = "←";
-            btnBack.TextAlign = ContentAlignment.TopCenter;
             btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
             // 
             // btnEdit
             // 
-            btnEdit.BackColor = Color.OliveDrab;
+            btnEdit.BackColor = Color.Transparent;
             btnEdit.Cursor = Cursors.Hand;
-            btnEdit.FlatAppearance.BorderSize = 0;
-            btnEdit.FlatAppearance.MouseDownBackColor = Color.DarkOliveGreen;
-            btnEdit.FlatAppearance.MouseOverBackColor = Color.DarkOliveGreen;
+            btnEdit.FlatAppearance.BorderColor = Color.Gray;
+            btnEdit.FlatAppearance.MouseDownBackColor = Color.OliveDrab;
+            btnEdit.FlatAppearance.MouseOverBackColor = Color.OliveDrab;
             btnEdit.FlatStyle = FlatStyle.Flat;
-            btnEdit.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEdit.Font = new Font("Gadugi", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEdit.ForeColor = Color.White;
-            btnEdit.Location = new Point(928, 11);
+            btnEdit.Location = new Point(-1, -1);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(158, 35);
+            btnEdit.Size = new Size(178, 103);
             btnEdit.TabIndex = 2;
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = false;
@@ -112,20 +112,31 @@
             // 
             // btnDeleteApplication
             // 
-            btnDeleteApplication.BackColor = Color.Firebrick;
-            btnDeleteApplication.FlatAppearance.BorderSize = 0;
-            btnDeleteApplication.FlatAppearance.MouseDownBackColor = Color.Maroon;
-            btnDeleteApplication.FlatAppearance.MouseOverBackColor = Color.Maroon;
+            btnDeleteApplication.BackColor = Color.Transparent;
+            btnDeleteApplication.FlatAppearance.BorderColor = Color.Gray;
+            btnDeleteApplication.FlatAppearance.MouseDownBackColor = Color.Firebrick;
+            btnDeleteApplication.FlatAppearance.MouseOverBackColor = Color.Firebrick;
             btnDeleteApplication.FlatStyle = FlatStyle.Flat;
-            btnDeleteApplication.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDeleteApplication.Font = new Font("Gadugi", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnDeleteApplication.ForeColor = Color.White;
-            btnDeleteApplication.Location = new Point(1092, 12);
+            btnDeleteApplication.Location = new Point(174, -1);
             btnDeleteApplication.Name = "btnDeleteApplication";
-            btnDeleteApplication.Size = new Size(158, 35);
+            btnDeleteApplication.Size = new Size(178, 103);
             btnDeleteApplication.TabIndex = 3;
             btnDeleteApplication.Text = "Delete Application";
             btnDeleteApplication.UseVisualStyleBackColor = false;
             btnDeleteApplication.Click += btnDeleteApplication_Click;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(btnDeleteApplication);
+            panel1.Controls.Add(btnEdit);
+            panel1.Dock = DockStyle.Right;
+            panel1.Location = new Point(912, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(350, 100);
+            panel1.TabIndex = 4;
             // 
             // ViewMyApplicationsForm
             // 
@@ -134,8 +145,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1262, 673);
-            Controls.Add(btnDeleteApplication);
-            Controls.Add(btnEdit);
+            Controls.Add(panel1);
             Controls.Add(btnBack);
             Controls.Add(dgvMyApplications);
             Name = "ViewMyApplicationsForm";
@@ -143,6 +153,7 @@
             Text = "ViewMyApplicationsForm";
             Load += ViewMyApplicationsForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvMyApplications).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -152,5 +163,6 @@
         private Button btnBack;
         private Button btnEdit;
         private Button btnDeleteApplication;
+        private Panel panel1;
     }
 }

@@ -307,7 +307,7 @@ namespace POGOY_H2___CPE262_Final_Project
             else if (status == "Rejected")
             {
                 row.DefaultCellStyle.BackColor = Color.LightCoral;
-                row.DefaultCellStyle.ForeColor = Color.White;
+                row.DefaultCellStyle.ForeColor = Color.Black;
             }
             else
             {

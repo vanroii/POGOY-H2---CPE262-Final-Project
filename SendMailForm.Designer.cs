@@ -32,17 +32,19 @@
             txtSubject = new TextBox();
             txtBody = new TextBox();
             panel1 = new Panel();
-            btnSend = new Button();
-            label1 = new Label();
             label2 = new Label();
+            label1 = new Label();
+            btnSend = new Button();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtSubject
             // 
             txtSubject.Location = new Point(103, 84);
             txtSubject.Name = "txtSubject";
-            txtSubject.Size = new Size(453, 27);
+            txtSubject.Size = new Size(450, 27);
             txtSubject.TabIndex = 0;
             // 
             // txtBody
@@ -62,11 +64,34 @@
             panel1.Controls.Add(btnSend);
             panel1.Controls.Add(txtBody);
             panel1.Controls.Add(txtSubject);
+            panel1.Controls.Add(pictureBox1);
             panel1.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            panel1.Location = new Point(175, 45);
+            panel1.Location = new Point(175, 70);
             panel1.Name = "panel1";
             panel1.Size = new Size(912, 532);
             panel1.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Gadugi", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(103, 125);
+            label2.Name = "label2";
+            label2.Size = new Size(50, 20);
+            label2.TabIndex = 4;
+            label2.Text = "Body";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Gadugi", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(103, 50);
+            label1.Name = "label1";
+            label1.Size = new Size(69, 20);
+            label1.TabIndex = 3;
+            label1.Text = "Subject";
             // 
             // btnSend
             // 
@@ -83,27 +108,17 @@
             btnSend.UseVisualStyleBackColor = false;
             btnSend.Click += btnSend_Click;
             // 
-            // label1
+            // pictureBox1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Gadugi", 10.2F);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(103, 50);
-            label1.Name = "label1";
-            label1.Size = new Size(65, 20);
-            label1.TabIndex = 3;
-            label1.Text = "Subject";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Gadugi", 10.2F);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(103, 125);
-            label2.Name = "label2";
-            label2.Size = new Size(47, 20);
-            label2.TabIndex = 4;
-            label2.Text = "Body";
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage = Properties.Resources.Sleek_Black_Gradient_Border_Style_PNG;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(912, 532);
+            pictureBox1.TabIndex = 12;
+            pictureBox1.TabStop = false;
             // 
             // SendMailForm
             // 
@@ -118,6 +133,7 @@
             Text = "SendMailForm";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -129,5 +145,6 @@
         private Button btnSend;
         private Label label2;
         private Label label1;
+        private PictureBox pictureBox1;
     }
 }

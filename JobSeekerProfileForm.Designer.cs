@@ -69,9 +69,9 @@
             panel1.Controls.Add(txtSkills);
             panel1.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             panel1.ForeColor = Color.White;
-            panel1.Location = new Point(311, 116);
+            panel1.Location = new Point(246, 101);
             panel1.Name = "panel1";
-            panel1.Size = new Size(640, 440);
+            panel1.Size = new Size(770, 470);
             panel1.TabIndex = 0;
             // 
             // label4
@@ -79,7 +79,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Gadugi", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(278, 40);
+            label4.Location = new Point(323, 59);
             label4.Name = "label4";
             label4.Size = new Size(84, 27);
             label4.TabIndex = 13;
@@ -88,7 +88,7 @@
             // btnBack
             // 
             btnBack.FlatStyle = FlatStyle.Popup;
-            btnBack.Location = new Point(200, 358);
+            btnBack.Location = new Point(245, 377);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(100, 35);
             btnBack.TabIndex = 12;
@@ -100,7 +100,7 @@
             // 
             lblCategory.AutoSize = true;
             lblCategory.Font = new Font("Gadugi", 10.8F, FontStyle.Bold);
-            lblCategory.Location = new Point(168, 313);
+            lblCategory.Location = new Point(213, 332);
             lblCategory.Name = "lblCategory";
             lblCategory.Size = new Size(92, 21);
             lblCategory.TabIndex = 11;
@@ -110,7 +110,7 @@
             // 
             lblAge.AutoSize = true;
             lblAge.Font = new Font("Gadugi", 10.8F, FontStyle.Bold);
-            lblAge.Location = new Point(211, 268);
+            lblAge.Location = new Point(256, 287);
             lblAge.Name = "lblAge";
             lblAge.Size = new Size(49, 21);
             lblAge.TabIndex = 10;
@@ -120,7 +120,7 @@
             // 
             lblExperience.AutoSize = true;
             lblExperience.Font = new Font("Gadugi", 10.8F, FontStyle.Bold);
-            lblExperience.Location = new Point(152, 223);
+            lblExperience.Location = new Point(197, 242);
             lblExperience.Name = "lblExperience";
             lblExperience.Size = new Size(108, 21);
             lblExperience.TabIndex = 9;
@@ -130,7 +130,7 @@
             // 
             lblSkills.AutoSize = true;
             lblSkills.Font = new Font("Gadugi", 10.8F, FontStyle.Bold);
-            lblSkills.Location = new Point(202, 135);
+            lblSkills.Location = new Point(247, 154);
             lblSkills.Name = "lblSkills";
             lblSkills.Size = new Size(58, 21);
             lblSkills.TabIndex = 8;
@@ -140,7 +140,7 @@
             // 
             lblName.AutoSize = true;
             lblName.Font = new Font("Gadugi", 10.8F, FontStyle.Bold);
-            lblName.Location = new Point(195, 90);
+            lblName.Location = new Point(240, 109);
             lblName.Name = "lblName";
             lblName.Size = new Size(65, 21);
             lblName.TabIndex = 7;
@@ -148,7 +148,7 @@
             // 
             // txtName
             // 
-            txtName.Location = new Point(278, 90);
+            txtName.Location = new Point(323, 109);
             txtName.Name = "txtName";
             txtName.Size = new Size(250, 27);
             txtName.TabIndex = 6;
@@ -159,7 +159,7 @@
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.ForeColor = Color.Black;
-            btnSave.Location = new Point(340, 358);
+            btnSave.Location = new Point(385, 377);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(100, 35);
             btnSave.TabIndex = 4;
@@ -170,28 +170,28 @@
             // cmbCategory
             // 
             cmbCategory.FormattingEnabled = true;
-            cmbCategory.Location = new Point(278, 313);
+            cmbCategory.Location = new Point(323, 332);
             cmbCategory.Name = "cmbCategory";
             cmbCategory.Size = new Size(150, 27);
             cmbCategory.TabIndex = 3;
             // 
             // numAge
             // 
-            numAge.Location = new Point(278, 268);
+            numAge.Location = new Point(323, 287);
             numAge.Name = "numAge";
             numAge.Size = new Size(150, 27);
             numAge.TabIndex = 2;
             // 
             // numExperience
             // 
-            numExperience.Location = new Point(278, 223);
+            numExperience.Location = new Point(323, 242);
             numExperience.Name = "numExperience";
             numExperience.Size = new Size(150, 27);
             numExperience.TabIndex = 1;
             // 
             // txtSkills
             // 
-            txtSkills.Location = new Point(278, 135);
+            txtSkills.Location = new Point(323, 154);
             txtSkills.Multiline = true;
             txtSkills.Name = "txtSkills";
             txtSkills.ScrollBars = ScrollBars.Vertical;

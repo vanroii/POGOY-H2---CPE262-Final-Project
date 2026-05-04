@@ -48,15 +48,13 @@
             btnApply = new Button();
             txtTitle = new TextBox();
             txtLocation = new TextBox();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
-            panel1.BackgroundImage = Properties.Resources.Black_Translucent_50;
+            panel1.BackgroundImage = Properties.Resources.black_70pct_transparent;
             panel1.Controls.Add(btnBack);
             panel1.Controls.Add(txtAgeMax);
             panel1.Controls.Add(txtAgeMin);
@@ -284,17 +282,6 @@
             txtLocation.Size = new Size(434, 27);
             txtLocation.TabIndex = 2;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(-1, -1);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1265, 675);
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
-            // 
             // ViewJobForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -303,14 +290,12 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1262, 673);
             Controls.Add(panel1);
-            Controls.Add(pictureBox1);
             Name = "ViewJobForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ViewJobForm";
             Load += ViewJobForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -330,7 +315,6 @@
         private Label label2;
         private Label label1;
         private Button btnBack;
-        private PictureBox pictureBox1;
         private TextBox txtDescription;
         private Button btnApply;
         private TextBox txtTitle;

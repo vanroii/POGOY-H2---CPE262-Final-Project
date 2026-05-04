@@ -15,7 +15,7 @@ namespace POGOY_H2___CPE262_Final_Project
     {
         public RegisterForm()
         {
-            InitializeComponent();
+            InitializeComponent();        
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -29,13 +29,18 @@ namespace POGOY_H2___CPE262_Final_Project
 
                 cmd.Parameters.AddWithValue("?", txtName.Text);
                 cmd.Parameters.AddWithValue("?", txtEmail.Text);
-                cmd.Parameters.AddWithValue("?", txtPassword.Text);
+
+                string hashedPassword = PasswordHelper.HashPassword(txtPassword.Text);
+                cmd.Parameters.AddWithValue("?", hashedPassword);
+
                 cmd.Parameters.AddWithValue("?", cmbRole.SelectedItem.ToString());
+
                 if (cmbRole.SelectedIndex == -1)
                 {
                     MessageBox.Show("Please select a role!");
                     return;
                 }
+
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Account Created Successfully!");

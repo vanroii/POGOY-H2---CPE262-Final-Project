@@ -16,12 +16,19 @@ namespace POGOY_H2___CPE262_Final_Project
             using (OleDbConnection con = DBConnection.GetConnection())
             {
                 con.Open();
+                string hashedPassword = PasswordHelper.HashPassword(txtPassword.Text);
 
-                string query = "SELECT * FROM Users WHERE Email=@Email AND [Password]=@Password";
+                //string query = "SELECT * FROM Users WHERE Email=@Email AND [Password]=@Password";
+                //OleDbCommand cmd = new OleDbCommand(query, con);
+
+                //cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+                //cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
+
+                string query = "SELECT * FROM Users WHERE Email=? AND [Password]=?";
                 OleDbCommand cmd = new OleDbCommand(query, con);
 
-                cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
-                cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
+                cmd.Parameters.AddWithValue("?", txtEmail.Text);
+                cmd.Parameters.AddWithValue("?", hashedPassword);
 
                 OleDbDataReader reader = cmd.ExecuteReader();
 

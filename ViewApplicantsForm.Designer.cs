@@ -85,14 +85,14 @@
             btnBack.BackColor = Color.Transparent;
             btnBack.Cursor = Cursors.Hand;
             btnBack.FlatAppearance.BorderSize = 0;
-            btnBack.FlatAppearance.MouseDownBackColor = Color.White;
+            btnBack.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btnBack.FlatAppearance.MouseOverBackColor = Color.Black;
             btnBack.FlatStyle = FlatStyle.Flat;
-            btnBack.Font = new Font("Gadugi", 35F, FontStyle.Bold);
+            btnBack.Font = new Font("Gadugi", 38F, FontStyle.Bold);
             btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(0, 0);
+            btnBack.Location = new Point(0, -10);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(106, 89);
+            btnBack.Size = new Size(106, 113);
             btnBack.TabIndex = 5;
             btnBack.Text = "←";
             btnBack.UseVisualStyleBackColor = false;
@@ -101,6 +101,7 @@
             // btnRemoveApplicant
             // 
             btnRemoveApplicant.BackColor = Color.Transparent;
+            btnRemoveApplicant.Cursor = Cursors.Hand;
             btnRemoveApplicant.FlatAppearance.BorderColor = Color.Gray;
             btnRemoveApplicant.FlatAppearance.MouseDownBackColor = Color.Firebrick;
             btnRemoveApplicant.FlatAppearance.MouseOverBackColor = Color.Firebrick;
@@ -140,6 +141,7 @@
             // btnSendMail
             // 
             btnSendMail.BackColor = Color.Transparent;
+            btnSendMail.Cursor = Cursors.Hand;
             btnSendMail.FlatAppearance.BorderColor = Color.Gray;
             btnSendMail.FlatAppearance.MouseDownBackColor = Color.OliveDrab;
             btnSendMail.FlatAppearance.MouseOverBackColor = Color.OliveDrab;
