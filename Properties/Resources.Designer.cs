@@ -73,6 +73,16 @@ namespace POGOY_H2___CPE262_Final_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap black_70pct_transparent {
+            get {
+                object obj = ResourceManager.GetObject("black_70pct_transparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap black_gradient_png {
             get {
                 object obj = ResourceManager.GetObject("black-gradient-png", resourceCulture);
@@ -106,6 +116,16 @@ namespace POGOY_H2___CPE262_Final_Project.Properties {
         internal static System.Drawing.Bitmap Black_Translucent_50 {
             get {
                 object obj = ResourceManager.GetObject("Black-Translucent-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Black_Translucent_70 {
+            get {
+                object obj = ResourceManager.GetObject("Black-Translucent-70", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

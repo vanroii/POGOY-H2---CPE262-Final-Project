@@ -41,28 +41,30 @@
             label4 = new Label();
             label2 = new Label();
             label1 = new Label();
+            pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtName
             // 
-            txtName.Location = new Point(217, 130);
+            txtName.Location = new Point(217, 245);
             txtName.Name = "txtName";
             txtName.Size = new Size(270, 27);
             txtName.TabIndex = 0;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(217, 200);
+            txtEmail.Location = new Point(217, 315);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(270, 27);
             txtEmail.TabIndex = 1;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(217, 270);
+            txtPassword.Location = new Point(217, 385);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(270, 27);
             txtPassword.TabIndex = 2;
@@ -76,16 +78,17 @@
             cmbRole.FlatStyle = FlatStyle.Flat;
             cmbRole.FormattingEnabled = true;
             cmbRole.Items.AddRange(new object[] { "Employer", "Job Seeker" });
-            cmbRole.Location = new Point(287, 321);
+            cmbRole.Location = new Point(287, 436);
             cmbRole.Name = "cmbRole";
             cmbRole.Size = new Size(200, 28);
             cmbRole.TabIndex = 3;
             // 
             // btnBack
             // 
+            btnBack.Cursor = Cursors.Hand;
             btnBack.FlatStyle = FlatStyle.Flat;
             btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(217, 370);
+            btnBack.Location = new Point(217, 485);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(94, 29);
             btnBack.TabIndex = 4;
@@ -96,8 +99,9 @@
             // btnRegister
             // 
             btnRegister.BackColor = Color.White;
+            btnRegister.Cursor = Cursors.Hand;
             btnRegister.FlatStyle = FlatStyle.Flat;
-            btnRegister.Location = new Point(393, 370);
+            btnRegister.Location = new Point(393, 485);
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new Size(94, 29);
             btnRegister.TabIndex = 5;
@@ -108,7 +112,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
-            panel1.BackgroundImage = Properties.Resources.Black_Translucent_50;
+            panel1.BackgroundImage = Properties.Resources.Black_Translucent_70;
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label4);
@@ -120,9 +124,10 @@
             panel1.Controls.Add(label2);
             panel1.Controls.Add(btnBack);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(360, 225);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Location = new Point(351, 151);
             panel1.Name = "panel1";
-            panel1.Size = new Size(720, 450);
+            panel1.Size = new Size(720, 550);
             panel1.TabIndex = 6;
             // 
             // label5
@@ -131,7 +136,7 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(217, 320);
+            label5.Location = new Point(217, 435);
             label5.Name = "label5";
             label5.Size = new Size(46, 25);
             label5.TabIndex = 10;
@@ -143,7 +148,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(217, 100);
+            label3.Location = new Point(217, 215);
             label3.Name = "label3";
             label3.Size = new Size(91, 25);
             label3.TabIndex = 9;
@@ -153,13 +158,14 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Gadugi", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Gadugi", 14F);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(147, 35);
+            label4.Location = new Point(190, 140);
             label4.Name = "label4";
-            label4.Size = new Size(419, 34);
+            label4.Size = new Size(340, 28);
             label4.TabIndex = 8;
             label4.Text = "Local Job Coordinating System";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -167,7 +173,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(217, 240);
+            label2.Location = new Point(217, 355);
             label2.Name = "label2";
             label2.Size = new Size(87, 25);
             label2.TabIndex = 6;
@@ -179,11 +185,22 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(217, 170);
+            label1.Location = new Point(217, 285);
             label1.Name = "label1";
             label1.Size = new Size(124, 25);
             label1.TabIndex = 5;
             label1.Text = "Email Address";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackgroundImageLayout = ImageLayout.None;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(181, -21);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(351, 231);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 11;
+            pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -211,6 +228,7 @@
             Text = "RegisterForm";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
@@ -230,5 +248,6 @@
         private PictureBox pictureBox1;
         private Label label5;
         private Label label3;
+        private PictureBox pictureBox2;
     }
 }

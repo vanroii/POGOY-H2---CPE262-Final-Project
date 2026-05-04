@@ -28,10 +28,10 @@ namespace POGOY_H2___CPE262_Final_Project
             Body = body;
             DateSent = date;
 
-            //lblSender.Text = sender;
+            lblSender.Text = sender;
             lblSubject.Text = subject;
-            //lblPreview.Text = body.Length > 40 ? body.Substring(0, 40) + "..." : body;
-            //lblDate.Text = date.ToString("MMM dd");
+            lblPreview.Text = body.Length > 35 ? body.Substring(0, 35) + "..." : body;
+            lblDate.Text = date.ToString("MMM dd");
 
             this.Click += ClickAll;
             foreach (Control c in this.Controls)

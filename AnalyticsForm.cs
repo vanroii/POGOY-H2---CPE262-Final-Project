@@ -24,26 +24,40 @@ namespace POGOY_H2___CPE262_Final_Project
             chartAnalytics.Series.Clear();
             chartAnalytics.ChartAreas.Clear();
             chartAnalytics.Titles.Clear();
+            chartAnalytics.Legends.Clear();
 
             ChartArea area = new ChartArea();
+
+            area.BackColor = Color.Transparent;
+
+            area.AxisX.LabelStyle.ForeColor = Color.White;
+            area.AxisY.LabelStyle.ForeColor = Color.White;
+            area.AxisX.TitleForeColor = Color.White;
+            area.AxisY.TitleForeColor = Color.White;
+
+            area.AxisX.MajorGrid.LineColor = Color.FromArgb(40, Color.White);
+            area.AxisY.MajorGrid.LineColor = Color.FromArgb(40, Color.White);
+
             chartAnalytics.ChartAreas.Add(area);
 
             area.Area3DStyle.Enable3D = true;
             area.Area3DStyle.Inclination = 10;
-            area.Area3DStyle.Rotation = 5;
-            area.Area3DStyle.Perspective = 5;
+            area.Area3DStyle.Rotation = 4;
+            area.Area3DStyle.Perspective = 10;
 
             var series = new Series(seriesName)
             {
                 ["DrawingStyle"] = "Cylinder",
                 ChartType = SeriesChartType.Column,
-                IsXValueIndexed = true
+                IsXValueIndexed = true,
+                IsVisibleInLegend = false
             };
             series["PointWidth"] = "0.6";
-            series.Color = Color.SteelBlue;
+            series.Color = Color.DarkOrange;
             series.BackGradientStyle = GradientStyle.TopBottom;
-            series.BackSecondaryColor = Color.LightBlue;
+            series.BackSecondaryColor = Color.Orange;
             series.ShadowOffset = 3;
+            series.LabelForeColor = Color.White;
 
             chartAnalytics.Series.Add(series);
 
@@ -84,6 +98,10 @@ namespace POGOY_H2___CPE262_Final_Project
                     }
                 }
             }
+            foreach (var lg in chartAnalytics.Legends)
+                lg.ForeColor = Color.White;
+            for (int i = 0; i < chartAnalytics.Titles.Count; i++)
+                chartAnalytics.Titles[i].ForeColor = Color.White;
 
             var ca = chartAnalytics.ChartAreas[0];
             ca.AxisX.Interval = 1;
@@ -124,9 +142,7 @@ namespace POGOY_H2___CPE262_Final_Project
         {
             chartAnalytics.Series.Clear();
             chartAnalytics.ChartAreas.Clear();
-
             chartAnalytics.ChartAreas.Add(new ChartArea());
-
             LoadJobsPerCategory();
         }
 
@@ -148,11 +164,6 @@ namespace POGOY_H2___CPE262_Final_Project
         private void btnTopJobs_Click(object sender, EventArgs e)
         {
             LoadTopJobs();
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

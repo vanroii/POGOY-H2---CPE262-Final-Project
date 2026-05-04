@@ -24,6 +24,7 @@ namespace POGOY_H2___CPE262_Final_Project
         private void ChatForm_Load(object sender, EventArgs e)
         {
             LoadChatUsers();
+            panelMain.Hide();
         }
 
         private void LoadChatUsers()
@@ -69,6 +70,7 @@ namespace POGOY_H2___CPE262_Final_Project
             currentChatUserId = item.UserID;
             lblChatName.Text = item.UserName;
 
+            panelMain.Show();
             LoadMessages();
         }
 
@@ -101,18 +103,15 @@ namespace POGOY_H2___CPE262_Final_Project
 
                     string msg = reader["Message"].ToString();
 
-                    // Outer container sized to the messages panel width so we can place an inner block left or right.
                     Panel msgPanel = new Panel();
                     msgPanel.AutoSize = false;
-                    msgPanel.Width = Math.Max(200, flpMessages.ClientSize.Width - 20); // leave space for scrollbar/margins
+                    msgPanel.Width = Math.Max(200, flpMessages.ClientSize.Width - 50);
 
-                    // Inner block that holds the bubble and metadata stacked vertically.
                     FlowLayoutPanel inner = new FlowLayoutPanel();
                     inner.FlowDirection = FlowDirection.TopDown;
                     inner.WrapContents = false;
                     inner.AutoSize = true;
 
-                    // Message bubble
                     Label bubble = new Label();
                     bubble.Text = msg;
                     bubble.AutoSize = true;
@@ -120,7 +119,6 @@ namespace POGOY_H2___CPE262_Final_Project
                     bubble.Padding = new Padding(10);
                     bubble.Margin = new Padding(0, 0, 0, 3);
 
-                    // Metadata row(date and optional status)
                     FlowLayoutPanel metaRow = new FlowLayoutPanel();
                     metaRow.AutoSize = true;
                     metaRow.FlowDirection = FlowDirection.LeftToRight;
@@ -129,19 +127,20 @@ namespace POGOY_H2___CPE262_Final_Project
                     Label lblDate = new Label();
                     lblDate.Text = date.ToString("hh:mm tt");
                     lblDate.Font = new Font("Gadugi", 7);
-                    lblDate.ForeColor = Color.Gray;
+                    lblDate.ForeColor = Color.White;
                     lblDate.AutoSize = true;
                     lblDate.Margin = new Padding(0, 0, 8, 0);
 
                     Label status = new Label();
                     status.AutoSize = true;
                     status.Font = new Font("Gadugi", 7);
-                    status.ForeColor = Color.Gray;
+                    status.ForeColor = Color.White;
 
                     if (isMe)
                     {
-                        bubble.BackColor = Color.LightBlue;
+                        bubble.BackColor = Color.LightGray;
                         bubble.TextAlign = ContentAlignment.MiddleRight;
+                        bubble.Dock = DockStyle.Right;
 
                         if (seen)
                             status.Text = "Seen";
@@ -150,32 +149,30 @@ namespace POGOY_H2___CPE262_Final_Project
                         else
                             status.Text = "Sent";
 
-                        // For my messages, put date then status and right-align the inner block.
-                        metaRow.Controls.Add(lblDate);
                         metaRow.Controls.Add(status);
+                        metaRow.Controls.Add(lblDate);
+                        metaRow.Dock = DockStyle.Right;
 
-                        inner.Controls.Add(bubble); 
+                        inner.Controls.Add(bubble);
                         inner.Controls.Add(metaRow);
 
-                        // place inner at right inside msgPanel
-                        // compute location after sizing inner
                         msgPanel.Controls.Add(inner);
                         inner.Location = new Point(msgPanel.Width - inner.PreferredSize.Width - 10, 0);
                         msgPanel.Height = inner.PreferredSize.Height;
                     }
                     else
                     {
-                        bubble.BackColor = Color.LightGray;
+                        bubble.BackColor = Color.Black;
+                        bubble.ForeColor = Color.White;
                         bubble.TextAlign = ContentAlignment.MiddleLeft;
 
-                        // For others, only show date below the message and left-align.
                         metaRow.Controls.Add(lblDate);
 
                         inner.Controls.Add(bubble);
                         inner.Controls.Add(metaRow);
 
                         msgPanel.Controls.Add(inner);
-                        inner.Location = new Point(10, 0); // small left padding
+                        inner.Location = new Point(40, 0);
                         msgPanel.Height = inner.PreferredSize.Height;
                     }
                     flpMessages.Controls.Add(msgPanel);
@@ -188,7 +185,7 @@ namespace POGOY_H2___CPE262_Final_Project
                 {
                     Text = "No messages yet",
                     AutoSize = true,
-                    ForeColor = Color.Gray,
+                    ForeColor = Color.White,
                     Margin = new Padding(10)
                 };
                 flpMessages.Controls.Add(placeholder);
@@ -308,6 +305,11 @@ namespace POGOY_H2___CPE262_Final_Project
 
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -40,19 +40,23 @@
             // dgvMyApplications
             // 
             dgvMyApplications.AllowUserToAddRows = false;
+            dgvMyApplications.AllowUserToResizeColumns = false;
+            dgvMyApplications.AllowUserToResizeRows = false;
             dgvMyApplications.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvMyApplications.BackgroundColor = Color.White;
             dgvMyApplications.BorderStyle = BorderStyle.None;
+            dgvMyApplications.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
             dgvMyApplications.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.Black;
-            dataGridViewCellStyle1.Font = new Font("Gadugi", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.Font = new Font("Gadugi", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = Color.Black;
             dataGridViewCellStyle1.SelectionForeColor = Color.White;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvMyApplications.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvMyApplications.ColumnHeadersHeight = 35;
+            dgvMyApplications.ColumnHeadersHeight = 40;
+            dgvMyApplications.Cursor = Cursors.Hand;
             dgvMyApplications.EnableHeadersVisualStyles = false;
             dgvMyApplications.GridColor = Color.Black;
             dgvMyApplications.Location = new Point(12, 58);
@@ -64,6 +68,7 @@
             dgvMyApplications.RowHeadersWidth = 51;
             dgvMyApplications.RowTemplate.DefaultCellStyle.SelectionBackColor = SystemColors.ButtonShadow;
             dgvMyApplications.RowTemplate.DefaultCellStyle.SelectionForeColor = SystemColors.ControlText;
+            dgvMyApplications.RowTemplate.Height = 40;
             dgvMyApplications.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvMyApplications.Size = new Size(1238, 600);
             dgvMyApplications.TabIndex = 0;
@@ -71,24 +76,33 @@
             // btnBack
             // 
             btnBack.BackColor = Color.Transparent;
+            btnBack.Cursor = Cursors.Hand;
+            btnBack.FlatAppearance.BorderSize = 0;
+            btnBack.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnBack.FlatAppearance.MouseOverBackColor = Color.Black;
             btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.Font = new Font("Gadugi", 33F, FontStyle.Bold);
             btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(12, 12);
+            btnBack.Location = new Point(0, -13);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(100, 35);
+            btnBack.Size = new Size(100, 65);
             btnBack.TabIndex = 1;
-            btnBack.Text = "Back";
+            btnBack.Text = "←";
+            btnBack.TextAlign = ContentAlignment.TopCenter;
             btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
             // 
             // btnEdit
             // 
             btnEdit.BackColor = Color.OliveDrab;
+            btnEdit.Cursor = Cursors.Hand;
             btnEdit.FlatAppearance.BorderSize = 0;
+            btnEdit.FlatAppearance.MouseDownBackColor = Color.DarkOliveGreen;
+            btnEdit.FlatAppearance.MouseOverBackColor = Color.DarkOliveGreen;
             btnEdit.FlatStyle = FlatStyle.Flat;
             btnEdit.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEdit.ForeColor = Color.White;
-            btnEdit.Location = new Point(1092, 11);
+            btnEdit.Location = new Point(928, 11);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(158, 35);
             btnEdit.TabIndex = 2;
@@ -100,10 +114,12 @@
             // 
             btnDeleteApplication.BackColor = Color.Firebrick;
             btnDeleteApplication.FlatAppearance.BorderSize = 0;
+            btnDeleteApplication.FlatAppearance.MouseDownBackColor = Color.Maroon;
+            btnDeleteApplication.FlatAppearance.MouseOverBackColor = Color.Maroon;
             btnDeleteApplication.FlatStyle = FlatStyle.Flat;
             btnDeleteApplication.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnDeleteApplication.ForeColor = Color.White;
-            btnDeleteApplication.Location = new Point(928, 11);
+            btnDeleteApplication.Location = new Point(1092, 12);
             btnDeleteApplication.Name = "btnDeleteApplication";
             btnDeleteApplication.Size = new Size(158, 35);
             btnDeleteApplication.TabIndex = 3;

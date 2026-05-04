@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
             panelSidebar = new Panel();
+            btnChats = new Button();
             label2 = new Label();
             btnViewApplications = new Button();
             lblWelcome = new Label();
@@ -39,7 +40,6 @@
             btnManageJobs = new Button();
             btnManageUsers = new Button();
             panelMain = new Panel();
-            btnChats = new Button();
             panelSidebar.SuspendLayout();
             SuspendLayout();
             // 
@@ -64,27 +64,44 @@
             panelSidebar.Size = new Size(350, 853);
             panelSidebar.TabIndex = 6;
             // 
+            // btnChats
+            // 
+            btnChats.FlatAppearance.BorderColor = Color.Gray;
+            btnChats.FlatAppearance.BorderSize = 0;
+            btnChats.FlatAppearance.MouseDownBackColor = Color.Gray;
+            btnChats.FlatAppearance.MouseOverBackColor = Color.Black;
+            btnChats.FlatStyle = FlatStyle.Flat;
+            btnChats.ForeColor = Color.White;
+            btnChats.Location = new Point(-2, 600);
+            btnChats.Name = "btnChats";
+            btnChats.Size = new Size(355, 100);
+            btnChats.TabIndex = 9;
+            btnChats.Text = "Messages";
+            btnChats.UseVisualStyleBackColor = true;
+            btnChats.Click += btnChats_Click;
+            // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Gadugi", 9.5F);
-            label2.Location = new Point(123, 150);
+            label2.Font = new Font("Gadugi", 9F);
+            label2.Location = new Point(125, 131);
             label2.Name = "label2";
-            label2.Size = new Size(105, 19);
+            label2.Size = new Size(100, 19);
             label2.TabIndex = 8;
             label2.Text = "Administrator";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnViewApplications
             // 
-            btnViewApplications.FlatAppearance.BorderSize = 0;
-            btnViewApplications.FlatAppearance.MouseDownBackColor = Color.White;
+            btnViewApplications.FlatAppearance.BorderColor = Color.Gray;
+            btnViewApplications.FlatAppearance.BorderSize = 2;
+            btnViewApplications.FlatAppearance.MouseDownBackColor = Color.Gray;
             btnViewApplications.FlatAppearance.MouseOverBackColor = Color.Black;
             btnViewApplications.FlatStyle = FlatStyle.Flat;
             btnViewApplications.ForeColor = Color.White;
-            btnViewApplications.Location = new Point(0, 380);
+            btnViewApplications.Location = new Point(-2, 400);
             btnViewApplications.Name = "btnViewApplications";
-            btnViewApplications.Size = new Size(350, 100);
+            btnViewApplications.Size = new Size(355, 100);
             btnViewApplications.TabIndex = 7;
             btnViewApplications.Text = "View Applications";
             btnViewApplications.UseVisualStyleBackColor = true;
@@ -93,8 +110,8 @@
             // lblWelcome
             // 
             lblWelcome.Anchor = AnchorStyles.Top;
-            lblWelcome.Font = new Font("Gadugi", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblWelcome.Location = new Point(0, 94);
+            lblWelcome.Font = new Font("Gadugi", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblWelcome.Location = new Point(0, 75);
             lblWelcome.Name = "lblWelcome";
             lblWelcome.Size = new Size(350, 42);
             lblWelcome.TabIndex = 6;
@@ -103,7 +120,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(131, 59);
+            label1.Location = new Point(131, 40);
             label1.Name = "label1";
             label1.Size = new Size(88, 21);
             label1.TabIndex = 5;
@@ -114,11 +131,11 @@
             // 
             btnLogout.BackgroundImageLayout = ImageLayout.None;
             btnLogout.FlatAppearance.BorderSize = 0;
-            btnLogout.FlatAppearance.MouseDownBackColor = Color.White;
+            btnLogout.FlatAppearance.MouseDownBackColor = Color.Gray;
             btnLogout.FlatAppearance.MouseOverBackColor = Color.Black;
             btnLogout.FlatStyle = FlatStyle.Flat;
             btnLogout.ForeColor = Color.White;
-            btnLogout.Location = new Point(0, 720);
+            btnLogout.Location = new Point(0, 750);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(350, 100);
             btnLogout.TabIndex = 4;
@@ -128,14 +145,14 @@
             // 
             // btnAnalytics
             // 
-            btnAnalytics.FlatAppearance.BorderSize = 0;
-            btnAnalytics.FlatAppearance.MouseDownBackColor = Color.White;
+            btnAnalytics.FlatAppearance.BorderColor = Color.Gray;
+            btnAnalytics.FlatAppearance.MouseDownBackColor = Color.Gray;
             btnAnalytics.FlatAppearance.MouseOverBackColor = Color.Black;
             btnAnalytics.FlatStyle = FlatStyle.Flat;
             btnAnalytics.ForeColor = Color.White;
-            btnAnalytics.Location = new Point(0, 480);
+            btnAnalytics.Location = new Point(-2, 500);
             btnAnalytics.Name = "btnAnalytics";
-            btnAnalytics.Size = new Size(350, 100);
+            btnAnalytics.Size = new Size(355, 100);
             btnAnalytics.TabIndex = 3;
             btnAnalytics.Text = "Analytics";
             btnAnalytics.UseVisualStyleBackColor = true;
@@ -143,14 +160,14 @@
             // 
             // btnManageJobs
             // 
-            btnManageJobs.FlatAppearance.BorderSize = 0;
-            btnManageJobs.FlatAppearance.MouseDownBackColor = Color.White;
+            btnManageJobs.FlatAppearance.BorderColor = Color.Gray;
+            btnManageJobs.FlatAppearance.MouseDownBackColor = Color.Gray;
             btnManageJobs.FlatAppearance.MouseOverBackColor = Color.Black;
             btnManageJobs.FlatStyle = FlatStyle.Flat;
             btnManageJobs.ForeColor = Color.White;
-            btnManageJobs.Location = new Point(0, 280);
+            btnManageJobs.Location = new Point(-2, 300);
             btnManageJobs.Name = "btnManageJobs";
-            btnManageJobs.Size = new Size(350, 100);
+            btnManageJobs.Size = new Size(355, 100);
             btnManageJobs.TabIndex = 1;
             btnManageJobs.Text = "Manage Jobs";
             btnManageJobs.UseVisualStyleBackColor = true;
@@ -158,14 +175,15 @@
             // 
             // btnManageUsers
             // 
+            btnManageUsers.FlatAppearance.BorderColor = Color.Gray;
             btnManageUsers.FlatAppearance.BorderSize = 0;
-            btnManageUsers.FlatAppearance.MouseDownBackColor = Color.White;
+            btnManageUsers.FlatAppearance.MouseDownBackColor = Color.Gray;
             btnManageUsers.FlatAppearance.MouseOverBackColor = Color.Black;
             btnManageUsers.FlatStyle = FlatStyle.Flat;
             btnManageUsers.ForeColor = Color.White;
-            btnManageUsers.Location = new Point(0, 180);
+            btnManageUsers.Location = new Point(-2, 200);
             btnManageUsers.Name = "btnManageUsers";
-            btnManageUsers.Size = new Size(350, 100);
+            btnManageUsers.Size = new Size(355, 100);
             btnManageUsers.TabIndex = 0;
             btnManageUsers.Text = "Manage Users";
             btnManageUsers.UseVisualStyleBackColor = true;
@@ -179,21 +197,6 @@
             panelMain.Name = "panelMain";
             panelMain.Size = new Size(1072, 853);
             panelMain.TabIndex = 7;
-            // 
-            // btnChats
-            // 
-            btnChats.FlatAppearance.BorderSize = 0;
-            btnChats.FlatAppearance.MouseDownBackColor = Color.White;
-            btnChats.FlatAppearance.MouseOverBackColor = Color.Black;
-            btnChats.FlatStyle = FlatStyle.Flat;
-            btnChats.ForeColor = Color.White;
-            btnChats.Location = new Point(0, 580);
-            btnChats.Name = "btnChats";
-            btnChats.Size = new Size(350, 100);
-            btnChats.TabIndex = 9;
-            btnChats.Text = "Messages";
-            btnChats.UseVisualStyleBackColor = true;
-            btnChats.Click += btnChats_Click;
             // 
             // AdminDashboard
             // 

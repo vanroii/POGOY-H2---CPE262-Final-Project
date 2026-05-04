@@ -49,10 +49,12 @@
             label2 = new Label();
             label1 = new Label();
             btnCancel = new Button();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numAgeMax).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numAgeMin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numExperience).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtTitle
@@ -233,7 +235,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Gadugi", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(100, 54);
+            label4.Location = new Point(407, 54);
             label4.Name = "label4";
             label4.Size = new Size(186, 27);
             label4.TabIndex = 10;
@@ -288,6 +290,17 @@
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage = Properties.Resources.Sleek_Black_Gradient_Border_Style_PNG;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(-1, -1);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1265, 675);
+            pictureBox1.TabIndex = 10;
+            pictureBox1.TabStop = false;
+            // 
             // EditJobForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -296,6 +309,7 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1262, 673);
             Controls.Add(panel1);
+            Controls.Add(pictureBox1);
             Name = "EditJobForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "EditJobForm";
@@ -305,6 +319,7 @@
             ((System.ComponentModel.ISupportInitialize)numAgeMax).EndInit();
             ((System.ComponentModel.ISupportInitialize)numAgeMin).EndInit();
             ((System.ComponentModel.ISupportInitialize)numExperience).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -330,5 +345,6 @@
         private Label label8;
         private Label label9;
         private Label label6;
+        private PictureBox pictureBox1;
     }
 }

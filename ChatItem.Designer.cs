@@ -36,42 +36,46 @@
             // lblName
             // 
             lblName.Font = new Font("Gadugi", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblName.Location = new Point(15, 13);
+            lblName.Location = new Point(15, 11);
             lblName.Name = "lblName";
-            lblName.Size = new Size(270, 25);
+            lblName.Size = new Size(270, 24);
             lblName.TabIndex = 0;
-            lblName.Text = "label1";
+            lblName.Text = "Name";
             lblName.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblRole
             // 
-            lblRole.Location = new Point(15, 38);
+            lblRole.Location = new Point(15, 35);
             lblRole.Name = "lblRole";
-            lblRole.Size = new Size(159, 25);
+            lblRole.Size = new Size(159, 24);
             lblRole.TabIndex = 1;
-            lblRole.Text = "label1";
+            lblRole.Text = "Role";
             lblRole.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblUserID
             // 
-            lblUserID.Location = new Point(180, 38);
+            lblUserID.Location = new Point(180, 35);
             lblUserID.Name = "lblUserID";
-            lblUserID.Size = new Size(105, 25);
+            lblUserID.Size = new Size(105, 24);
             lblUserID.TabIndex = 2;
-            lblUserID.Text = "label1";
+            lblUserID.Text = "UserID";
             lblUserID.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // ChatItem
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
+            BackgroundImage = Properties.Resources.black_70pct_transparent;
             BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(lblUserID);
             Controls.Add(lblRole);
             Controls.Add(lblName);
+            Cursor = Cursors.Hand;
+            Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ForeColor = Color.White;
             Name = "ChatItem";
-            Size = new Size(298, 76);
+            Size = new Size(310, 70);
             ResumeLayout(false);
         }
 

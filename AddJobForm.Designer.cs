@@ -268,7 +268,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Gadugi", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(112, 54);
+            label4.Location = new Point(450, 54);
             label4.Name = "label4";
             label4.Size = new Size(100, 27);
             label4.TabIndex = 9;

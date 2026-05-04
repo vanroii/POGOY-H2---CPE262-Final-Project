@@ -54,16 +54,16 @@ namespace POGOY_H2___CPE262_Final_Project
             LoadForm(new AnalyticsForm());
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            new Form1().Show();
-            this.Close();
-        }
-
         private void btnChats_Click(object sender, EventArgs e)
         {
             ChatForm form = new ChatForm();
             form.ShowDialog();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            new Form1().Show();
+            this.Close();
         }
     }
 }

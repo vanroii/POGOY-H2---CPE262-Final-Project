@@ -121,8 +121,8 @@
   <data name="black-gradient-png--MFj4tv" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\black-gradient-png--MFj4tv.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Sleek-Black-Gradient-Border-Style-PNG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sleek-Black-Gradient-Border-Style-PNG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="black_70pct_transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_70pct_transparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Black-Translucent-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Black-Translucent-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,6 +133,9 @@
   <data name="hero-bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hero-bg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Sleek-Black-Gradient-Border-Style-PNG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sleek-Black-Gradient-Border-Style-PNG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="black-gradient-png" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\black-gradient-png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -141,5 +144,8 @@
   </data>
   <data name="abstract-gradient-black-and-white-color-background-vector" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\abstract-gradient-black-and-white-color-background-vector.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Black-Translucent-70" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Black-Translucent-70.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -43,16 +43,17 @@
             lblFilePath = new Label();
             lblCurrentResume = new Label();
             openFileDialog1 = new OpenFileDialog();
-            pictureBox1 = new PictureBox();
             openFileDialog2 = new OpenFileDialog();
+            panel2 = new Panel();
+            panel3 = new Panel();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
-            panel1.BackgroundImage = Properties.Resources.Black_Translucent_50;
+            panel1.BackgroundImage = Properties.Resources.Black_Translucent_70;
             panel1.Controls.Add(lblReferralLetterPath);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(btnBrowseReferralLetter);
@@ -67,13 +68,14 @@
             panel1.Controls.Add(lblCurrentResume);
             panel1.Font = new Font("Gadugi", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             panel1.ForeColor = Color.White;
-            panel1.Location = new Point(195, 76);
+            panel1.Location = new Point(196, 77);
             panel1.Name = "panel1";
             panel1.Size = new Size(872, 521);
             panel1.TabIndex = 0;
             // 
             // lblReferralLetterPath
             // 
+            lblReferralLetterPath.Cursor = Cursors.Hand;
             lblReferralLetterPath.Location = new Point(180, 392);
             lblReferralLetterPath.Name = "lblReferralLetterPath";
             lblReferralLetterPath.Size = new Size(390, 30);
@@ -94,7 +96,9 @@
             // btnBrowseReferralLetter
             // 
             btnBrowseReferralLetter.BackColor = Color.White;
+            btnBrowseReferralLetter.Cursor = Cursors.Hand;
             btnBrowseReferralLetter.FlatStyle = FlatStyle.Flat;
+            btnBrowseReferralLetter.Font = new Font("Gadugi", 10F);
             btnBrowseReferralLetter.ForeColor = Color.Black;
             btnBrowseReferralLetter.Location = new Point(70, 392);
             btnBrowseReferralLetter.Name = "btnBrowseReferralLetter";
@@ -106,6 +110,7 @@
             // 
             // lblFilePath2
             // 
+            lblFilePath2.Cursor = Cursors.Hand;
             lblFilePath2.Location = new Point(70, 293);
             lblFilePath2.Name = "lblFilePath2";
             lblFilePath2.Size = new Size(500, 30);
@@ -124,6 +129,7 @@
             // 
             // lblResumePath
             // 
+            lblResumePath.Cursor = Cursors.Hand;
             lblResumePath.Location = new Point(180, 189);
             lblResumePath.Name = "lblResumePath";
             lblResumePath.Size = new Size(390, 30);
@@ -143,7 +149,9 @@
             // 
             // btnCancel
             // 
+            btnCancel.Cursor = Cursors.Hand;
             btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Font = new Font("Gadugi", 9.5F);
             btnCancel.Location = new Point(276, 444);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(100, 35);
@@ -155,8 +163,10 @@
             // btnUpdate
             // 
             btnUpdate.BackColor = Color.White;
+            btnUpdate.Cursor = Cursors.Hand;
             btnUpdate.FlatAppearance.BorderSize = 0;
             btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.Font = new Font("Gadugi", 9.5F);
             btnUpdate.ForeColor = Color.Black;
             btnUpdate.Location = new Point(416, 444);
             btnUpdate.Name = "btnUpdate";
@@ -169,7 +179,9 @@
             // btnUpload
             // 
             btnUpload.BackColor = Color.White;
+            btnUpload.Cursor = Cursors.Hand;
             btnUpload.FlatStyle = FlatStyle.Flat;
+            btnUpload.Font = new Font("Gadugi", 10F);
             btnUpload.ForeColor = Color.Black;
             btnUpload.Location = new Point(70, 189);
             btnUpload.Name = "btnUpload";
@@ -181,6 +193,7 @@
             // 
             // lblFilePath
             // 
+            lblFilePath.Cursor = Cursors.Hand;
             lblFilePath.Location = new Point(70, 90);
             lblFilePath.Name = "lblFilePath";
             lblFilePath.Size = new Size(500, 30);
@@ -201,20 +214,29 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.BackgroundImage = Properties.Resources.Sleek_Black_Gradient_Border_Style_PNG;
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(-1, -1);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1265, 675);
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
-            // 
             // openFileDialog2
             // 
             openFileDialog2.FileName = "openFileDialog2";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Transparent;
+            panel2.BackgroundImage = Properties.Resources.Black_Translucent_50;
+            panel2.Controls.Add(panel1);
+            panel2.Controls.Add(panel3);
+            panel2.Location = new Point(-1, -1);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1265, 675);
+            panel2.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1265, 675);
+            panel3.TabIndex = 1;
             // 
             // EditApplicationForm
             // 
@@ -223,15 +245,14 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1262, 673);
-            Controls.Add(panel1);
-            Controls.Add(pictureBox1);
+            Controls.Add(panel2);
             Name = "EditApplicationForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "EditApplicationForm";
             Load += EditApplicationForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -244,7 +265,6 @@
         private Button btnCancel;
         private Button btnUpdate;
         private OpenFileDialog openFileDialog1;
-        private PictureBox pictureBox1;
         private Label label1;
         private Label lblResumePath;
         private Label lblReferralLetterPath;
@@ -253,5 +273,7 @@
         private Label lblFilePath2;
         private Label label5;
         private OpenFileDialog openFileDialog2;
+        private Panel panel2;
+        private Panel panel3;
     }
 }

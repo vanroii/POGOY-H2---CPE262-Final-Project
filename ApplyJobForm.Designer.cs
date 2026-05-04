@@ -40,9 +40,11 @@
             btnUploadResume = new Button();
             lblJobTitle = new Label();
             openFileDialog1 = new OpenFileDialog();
-            pictureBox1 = new PictureBox();
             openFileDialog2 = new OpenFileDialog();
+            panel2 = new Panel();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -50,7 +52,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top;
             panel1.BackColor = Color.Transparent;
-            panel1.BackgroundImage = Properties.Resources.Black_Translucent_50;
+            panel1.BackgroundImage = Properties.Resources.Black_Translucent_70;
             panel1.Controls.Add(label2);
             panel1.Controls.Add(lblReferralLetterPath);
             panel1.Controls.Add(btnBrowseReferralLetter);
@@ -62,7 +64,7 @@
             panel1.Controls.Add(lblJobTitle);
             panel1.Font = new Font("Gadugi", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             panel1.ForeColor = Color.White;
-            panel1.Location = new Point(241, 126);
+            panel1.Location = new Point(242, 127);
             panel1.Name = "panel1";
             panel1.Size = new Size(780, 420);
             panel1.TabIndex = 0;
@@ -78,6 +80,7 @@
             // 
             // lblReferralLetterPath
             // 
+            lblReferralLetterPath.Cursor = Cursors.Hand;
             lblReferralLetterPath.Location = new Point(180, 258);
             lblReferralLetterPath.Name = "lblReferralLetterPath";
             lblReferralLetterPath.Size = new Size(530, 30);
@@ -89,7 +92,9 @@
             // btnBrowseReferralLetter
             // 
             btnBrowseReferralLetter.BackColor = Color.White;
+            btnBrowseReferralLetter.Cursor = Cursors.Hand;
             btnBrowseReferralLetter.FlatStyle = FlatStyle.Flat;
+            btnBrowseReferralLetter.Font = new Font("Gadugi", 10F);
             btnBrowseReferralLetter.ForeColor = Color.Black;
             btnBrowseReferralLetter.Location = new Point(70, 258);
             btnBrowseReferralLetter.Name = "btnBrowseReferralLetter";
@@ -110,7 +115,9 @@
             // 
             // btnCancel
             // 
+            btnCancel.Cursor = Cursors.Hand;
             btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Font = new Font("Gadugi", 9.5F);
             btnCancel.Location = new Point(270, 332);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(100, 35);
@@ -121,6 +128,7 @@
             // 
             // lblFilePath
             // 
+            lblFilePath.Cursor = Cursors.Hand;
             lblFilePath.Location = new Point(180, 157);
             lblFilePath.Name = "lblFilePath";
             lblFilePath.Size = new Size(530, 30);
@@ -132,8 +140,10 @@
             // btnSubmit
             // 
             btnSubmit.BackColor = Color.White;
+            btnSubmit.Cursor = Cursors.Hand;
             btnSubmit.FlatAppearance.BorderSize = 0;
             btnSubmit.FlatStyle = FlatStyle.Flat;
+            btnSubmit.Font = new Font("Gadugi", 9.5F);
             btnSubmit.ForeColor = Color.Black;
             btnSubmit.Location = new Point(410, 332);
             btnSubmit.Name = "btnSubmit";
@@ -146,7 +156,9 @@
             // btnUploadResume
             // 
             btnUploadResume.BackColor = Color.White;
+            btnUploadResume.Cursor = Cursors.Hand;
             btnUploadResume.FlatStyle = FlatStyle.Flat;
+            btnUploadResume.Font = new Font("Gadugi", 10F);
             btnUploadResume.ForeColor = Color.Black;
             btnUploadResume.Location = new Point(70, 157);
             btnUploadResume.Name = "btnUploadResume";
@@ -169,20 +181,31 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
+            // openFileDialog2
+            // 
+            openFileDialog2.FileName = "openFileDialog2";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Transparent;
+            panel2.BackgroundImage = Properties.Resources.Black_Translucent_50;
+            panel2.Controls.Add(panel1);
+            panel2.Controls.Add(pictureBox1);
+            panel2.Location = new Point(-1, -1);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1265, 675);
+            panel2.TabIndex = 1;
+            // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImage = Properties.Resources.Sleek_Black_Gradient_Border_Style_PNG;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Location = new Point(-1, -1);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(1265, 675);
-            pictureBox1.TabIndex = 1;
+            pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
-            // 
-            // openFileDialog2
-            // 
-            openFileDialog2.FileName = "openFileDialog2";
             // 
             // ApplyJobForm
             // 
@@ -191,13 +214,13 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1262, 673);
-            Controls.Add(panel1);
-            Controls.Add(pictureBox1);
+            Controls.Add(panel2);
             Name = "ApplyJobForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ApplyJobForm";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
@@ -210,12 +233,13 @@
         private Button btnUploadResume;
         private Label lblJobTitle;
         private OpenFileDialog openFileDialog1;
-        private PictureBox pictureBox1;
         private Label label1;
         private Button btnCancel;
         private Label label2;
         private Label lblReferralLetterPath;
         private Button btnBrowseReferralLetter;
         private OpenFileDialog openFileDialog2;
+        private Panel panel2;
+        private PictureBox pictureBox1;
     }
 }

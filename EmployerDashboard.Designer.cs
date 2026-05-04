@@ -51,19 +51,23 @@
             // dgvJobs
             // 
             dgvJobs.AllowUserToAddRows = false;
+            dgvJobs.AllowUserToResizeColumns = false;
+            dgvJobs.AllowUserToResizeRows = false;
             dgvJobs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvJobs.BackgroundColor = Color.White;
             dgvJobs.BorderStyle = BorderStyle.None;
+            dgvJobs.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
             dgvJobs.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.Black;
-            dataGridViewCellStyle1.Font = new Font("Gadugi", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.Font = new Font("Gadugi", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = Color.Black;
             dataGridViewCellStyle1.SelectionForeColor = Color.White;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvJobs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvJobs.ColumnHeadersHeight = 35;
+            dgvJobs.ColumnHeadersHeight = 40;
+            dgvJobs.Cursor = Cursors.Hand;
             dgvJobs.EnableHeadersVisualStyles = false;
             dgvJobs.GridColor = Color.Black;
             dgvJobs.Location = new Point(390, 125);
@@ -75,6 +79,7 @@
             dgvJobs.RowHeadersWidth = 51;
             dgvJobs.RowTemplate.DefaultCellStyle.SelectionBackColor = SystemColors.ButtonShadow;
             dgvJobs.RowTemplate.DefaultCellStyle.SelectionForeColor = SystemColors.ControlText;
+            dgvJobs.RowTemplate.Height = 40;
             dgvJobs.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvJobs.Size = new Size(1000, 700);
             dgvJobs.TabIndex = 4;
@@ -102,14 +107,15 @@
             // 
             // btnChats
             // 
+            btnChats.FlatAppearance.BorderColor = Color.Gray;
             btnChats.FlatAppearance.BorderSize = 0;
-            btnChats.FlatAppearance.MouseDownBackColor = Color.White;
+            btnChats.FlatAppearance.MouseDownBackColor = Color.Gray;
             btnChats.FlatAppearance.MouseOverBackColor = Color.Black;
             btnChats.FlatStyle = FlatStyle.Flat;
             btnChats.ForeColor = Color.White;
-            btnChats.Location = new Point(0, 580);
+            btnChats.Location = new Point(-2, 600);
             btnChats.Name = "btnChats";
-            btnChats.Size = new Size(350, 100);
+            btnChats.Size = new Size(355, 100);
             btnChats.TabIndex = 10;
             btnChats.Text = "Messages";
             btnChats.UseVisualStyleBackColor = true;
@@ -117,14 +123,14 @@
             // 
             // btnSentMails
             // 
-            btnSentMails.FlatAppearance.BorderSize = 0;
-            btnSentMails.FlatAppearance.MouseDownBackColor = Color.White;
+            btnSentMails.FlatAppearance.BorderColor = Color.Gray;
+            btnSentMails.FlatAppearance.MouseDownBackColor = Color.Gray;
             btnSentMails.FlatAppearance.MouseOverBackColor = Color.Black;
             btnSentMails.FlatStyle = FlatStyle.Flat;
             btnSentMails.ForeColor = Color.White;
-            btnSentMails.Location = new Point(0, 480);
+            btnSentMails.Location = new Point(-2, 500);
             btnSentMails.Name = "btnSentMails";
-            btnSentMails.Size = new Size(350, 100);
+            btnSentMails.Size = new Size(355, 100);
             btnSentMails.TabIndex = 9;
             btnSentMails.Text = "Mails Sent";
             btnSentMails.UseVisualStyleBackColor = true;
@@ -132,8 +138,8 @@
             // 
             // lblUserID
             // 
-            lblUserID.Font = new Font("Gadugi", 9.5F);
-            lblUserID.Location = new Point(0, 150);
+            lblUserID.Font = new Font("Gadugi", 9F);
+            lblUserID.Location = new Point(0, 131);
             lblUserID.Name = "lblUserID";
             lblUserID.Size = new Size(350, 21);
             lblUserID.TabIndex = 8;
@@ -142,8 +148,8 @@
             // lblWelcome
             // 
             lblWelcome.Anchor = AnchorStyles.Top;
-            lblWelcome.Font = new Font("Gadugi", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblWelcome.Location = new Point(0, 94);
+            lblWelcome.Font = new Font("Gadugi", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblWelcome.Location = new Point(0, 75);
             lblWelcome.Name = "lblWelcome";
             lblWelcome.Size = new Size(350, 42);
             lblWelcome.TabIndex = 6;
@@ -152,7 +158,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(131, 59);
+            label1.Location = new Point(131, 40);
             label1.Name = "label1";
             label1.Size = new Size(88, 21);
             label1.TabIndex = 5;
@@ -162,11 +168,11 @@
             // 
             btnLogout.BackgroundImageLayout = ImageLayout.None;
             btnLogout.FlatAppearance.BorderSize = 0;
-            btnLogout.FlatAppearance.MouseDownBackColor = Color.White;
+            btnLogout.FlatAppearance.MouseDownBackColor = Color.Gray;
             btnLogout.FlatAppearance.MouseOverBackColor = Color.Black;
             btnLogout.FlatStyle = FlatStyle.Flat;
             btnLogout.ForeColor = Color.White;
-            btnLogout.Location = new Point(0, 720);
+            btnLogout.Location = new Point(0, 750);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(350, 100);
             btnLogout.TabIndex = 4;
@@ -176,14 +182,15 @@
             // 
             // btnViewApplicants
             // 
-            btnViewApplicants.FlatAppearance.BorderSize = 0;
-            btnViewApplicants.FlatAppearance.MouseDownBackColor = Color.White;
+            btnViewApplicants.FlatAppearance.BorderColor = Color.Gray;
+            btnViewApplicants.FlatAppearance.BorderSize = 2;
+            btnViewApplicants.FlatAppearance.MouseDownBackColor = Color.Gray;
             btnViewApplicants.FlatAppearance.MouseOverBackColor = Color.Black;
             btnViewApplicants.FlatStyle = FlatStyle.Flat;
             btnViewApplicants.ForeColor = Color.White;
-            btnViewApplicants.Location = new Point(0, 380);
+            btnViewApplicants.Location = new Point(-2, 400);
             btnViewApplicants.Name = "btnViewApplicants";
-            btnViewApplicants.Size = new Size(350, 100);
+            btnViewApplicants.Size = new Size(355, 100);
             btnViewApplicants.TabIndex = 2;
             btnViewApplicants.Text = "View Applicants";
             btnViewApplicants.UseVisualStyleBackColor = true;
@@ -191,14 +198,14 @@
             // 
             // btnEditJob
             // 
-            btnEditJob.FlatAppearance.BorderSize = 0;
-            btnEditJob.FlatAppearance.MouseDownBackColor = Color.White;
+            btnEditJob.FlatAppearance.BorderColor = Color.Gray;
+            btnEditJob.FlatAppearance.MouseDownBackColor = Color.Gray;
             btnEditJob.FlatAppearance.MouseOverBackColor = Color.Black;
             btnEditJob.FlatStyle = FlatStyle.Flat;
             btnEditJob.ForeColor = Color.White;
-            btnEditJob.Location = new Point(0, 280);
+            btnEditJob.Location = new Point(-2, 300);
             btnEditJob.Name = "btnEditJob";
-            btnEditJob.Size = new Size(350, 100);
+            btnEditJob.Size = new Size(355, 100);
             btnEditJob.TabIndex = 1;
             btnEditJob.Text = "Edit / Update Job";
             btnEditJob.UseVisualStyleBackColor = true;
@@ -206,14 +213,15 @@
             // 
             // btnAddJob
             // 
+            btnAddJob.FlatAppearance.BorderColor = Color.Gray;
             btnAddJob.FlatAppearance.BorderSize = 0;
-            btnAddJob.FlatAppearance.MouseDownBackColor = Color.White;
+            btnAddJob.FlatAppearance.MouseDownBackColor = Color.Gray;
             btnAddJob.FlatAppearance.MouseOverBackColor = Color.Black;
             btnAddJob.FlatStyle = FlatStyle.Flat;
             btnAddJob.ForeColor = Color.White;
-            btnAddJob.Location = new Point(0, 180);
+            btnAddJob.Location = new Point(-2, 200);
             btnAddJob.Name = "btnAddJob";
-            btnAddJob.Size = new Size(350, 100);
+            btnAddJob.Size = new Size(355, 100);
             btnAddJob.TabIndex = 0;
             btnAddJob.Text = "Add Job";
             btnAddJob.UseVisualStyleBackColor = true;
@@ -221,15 +229,17 @@
             // 
             // btnDeleteJob
             // 
-            btnDeleteJob.BackColor = Color.Transparent;
+            btnDeleteJob.BackColor = Color.Firebrick;
+            btnDeleteJob.Cursor = Cursors.Hand;
             btnDeleteJob.FlatAppearance.BorderSize = 0;
             btnDeleteJob.FlatAppearance.MouseDownBackColor = Color.White;
-            btnDeleteJob.FlatAppearance.MouseOverBackColor = Color.Black;
+            btnDeleteJob.FlatAppearance.MouseOverBackColor = Color.Maroon;
             btnDeleteJob.FlatStyle = FlatStyle.Flat;
+            btnDeleteJob.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnDeleteJob.ForeColor = Color.White;
-            btnDeleteJob.Location = new Point(1233, 73);
+            btnDeleteJob.Location = new Point(1226, 80);
             btnDeleteJob.Name = "btnDeleteJob";
-            btnDeleteJob.Size = new Size(136, 34);
+            btnDeleteJob.Size = new Size(164, 27);
             btnDeleteJob.TabIndex = 7;
             btnDeleteJob.Text = "Delete Job";
             btnDeleteJob.UseVisualStyleBackColor = false;

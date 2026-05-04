@@ -28,84 +28,100 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChatForm));
+            panelSide = new Panel();
             txtSearch = new TextBox();
             flpUsers = new FlowLayoutPanel();
-            panel2 = new Panel();
-            btnSend = new Button();
+            btnBack = new Button();
+            panelMain = new Panel();
             txtMessage = new TextBox();
             flpMessages = new FlowLayoutPanel();
             panel3 = new Panel();
             lblChatName = new Label();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
+            btnSend = new Button();
+            panelSide.SuspendLayout();
+            panelMain.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // panelSide
             // 
-            panel1.BackColor = SystemColors.ControlLight;
-            panel1.Controls.Add(txtSearch);
-            panel1.Controls.Add(flpUsers);
-            panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(320, 853);
-            panel1.TabIndex = 0;
+            panelSide.BackColor = Color.Transparent;
+            panelSide.BackgroundImage = Properties.Resources.Black_Translucent_50;
+            panelSide.Controls.Add(txtSearch);
+            panelSide.Controls.Add(flpUsers);
+            panelSide.Controls.Add(btnBack);
+            panelSide.Dock = DockStyle.Left;
+            panelSide.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            panelSide.Location = new Point(0, 0);
+            panelSide.Name = "panelSide";
+            panelSide.Size = new Size(320, 853);
+            panelSide.TabIndex = 0;
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(54, 28);
+            txtSearch.Location = new Point(72, 23);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(247, 27);
+            txtSearch.Size = new Size(223, 27);
             txtSearch.TabIndex = 1;
             txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // flpUsers
             // 
             flpUsers.AutoScroll = true;
+            flpUsers.Dock = DockStyle.Bottom;
             flpUsers.FlowDirection = FlowDirection.TopDown;
-            flpUsers.Location = new Point(0, 75);
+            flpUsers.Location = new Point(0, 70);
             flpUsers.Name = "flpUsers";
-            flpUsers.Size = new Size(320, 778);
+            flpUsers.Size = new Size(320, 783);
             flpUsers.TabIndex = 0;
             flpUsers.WrapContents = false;
             // 
-            // panel2
+            // btnBack
             // 
-            panel2.BackColor = SystemColors.ControlDark;
-            panel2.Controls.Add(btnSend);
-            panel2.Controls.Add(txtMessage);
-            panel2.Controls.Add(flpMessages);
-            panel2.Controls.Add(panel3);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(320, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1102, 853);
-            panel2.TabIndex = 1;
+            btnBack.Cursor = Cursors.Hand;
+            btnBack.FlatAppearance.BorderSize = 0;
+            btnBack.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnBack.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.Font = new Font("Gadugi", 31.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnBack.ForeColor = Color.White;
+            btnBack.Location = new Point(0, -4);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(79, 70);
+            btnBack.TabIndex = 2;
+            btnBack.Text = "←";
+            btnBack.TextAlign = ContentAlignment.TopCenter;
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
-            // btnSend
+            // panelMain
             // 
-            btnSend.Location = new Point(979, 795);
-            btnSend.Name = "btnSend";
-            btnSend.Size = new Size(94, 29);
-            btnSend.TabIndex = 3;
-            btnSend.Text = "Send";
-            btnSend.UseVisualStyleBackColor = true;
-            btnSend.Click += btnSend_Click;
+            panelMain.BackColor = Color.Transparent;
+            panelMain.Controls.Add(txtMessage);
+            panelMain.Controls.Add(flpMessages);
+            panelMain.Controls.Add(panel3);
+            panelMain.Controls.Add(btnSend);
+            panelMain.Dock = DockStyle.Fill;
+            panelMain.Location = new Point(320, 0);
+            panelMain.Name = "panelMain";
+            panelMain.Size = new Size(1102, 853);
+            panelMain.TabIndex = 1;
             // 
             // txtMessage
             // 
-            txtMessage.Location = new Point(32, 797);
+            txtMessage.Location = new Point(40, 797);
             txtMessage.Name = "txtMessage";
-            txtMessage.Size = new Size(907, 27);
+            txtMessage.Size = new Size(946, 27);
             txtMessage.TabIndex = 2;
             // 
             // flpMessages
             // 
             flpMessages.AutoScroll = true;
+            flpMessages.BackColor = Color.Transparent;
+            flpMessages.Dock = DockStyle.Top;
             flpMessages.FlowDirection = FlowDirection.TopDown;
-            flpMessages.Location = new Point(0, 68);
+            flpMessages.Location = new Point(0, 70);
             flpMessages.Name = "flpMessages";
             flpMessages.Size = new Size(1102, 700);
             flpMessages.TabIndex = 1;
@@ -113,55 +129,77 @@
             // 
             // panel3
             // 
-            panel3.BackColor = SystemColors.Control;
+            panel3.BackColor = Color.Transparent;
+            panel3.BackgroundImage = Properties.Resources.black_70pct_transparent;
             panel3.Controls.Add(lblChatName);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1102, 69);
+            panel3.Size = new Size(1102, 70);
             panel3.TabIndex = 0;
             // 
             // lblChatName
             // 
             lblChatName.BackColor = Color.Transparent;
-            lblChatName.Font = new Font("Gadugi", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblChatName.Location = new Point(32, 0);
+            lblChatName.Font = new Font("Gadugi", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblChatName.ForeColor = Color.White;
+            lblChatName.Location = new Point(40, 0);
             lblChatName.Name = "lblChatName";
-            lblChatName.Size = new Size(936, 69);
+            lblChatName.Size = new Size(1035, 70);
             lblChatName.TabIndex = 0;
-            lblChatName.Text = "label1";
             lblChatName.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // btnSend
+            // 
+            btnSend.Cursor = Cursors.Hand;
+            btnSend.FlatAppearance.BorderSize = 0;
+            btnSend.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnSend.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnSend.FlatStyle = FlatStyle.Flat;
+            btnSend.Font = new Font("Gadugi", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSend.ForeColor = Color.White;
+            btnSend.Location = new Point(987, 779);
+            btnSend.Name = "btnSend";
+            btnSend.Size = new Size(83, 65);
+            btnSend.TabIndex = 3;
+            btnSend.Text = "➤";
+            btnSend.TextAlign = ContentAlignment.TopCenter;
+            btnSend.UseVisualStyleBackColor = true;
+            btnSend.Click += btnSend_Click;
             // 
             // ChatForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1422, 853);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(panelMain);
+            Controls.Add(panelSide);
             Name = "ChatForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ChatForm";
             Load += ChatForm_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            panelSide.ResumeLayout(false);
+            panelSide.PerformLayout();
+            panelMain.ResumeLayout(false);
+            panelMain.PerformLayout();
             panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
+        private Panel panelSide;
         private TextBox txtSearch;
         private FlowLayoutPanel flpUsers;
-        private Panel panel2;
+        private Panel panelMain;
         private FlowLayoutPanel flpMessages;
         private Panel panel3;
         private Label lblChatName;
         private Button btnSend;
         private TextBox txtMessage;
         private Label label1;
+        private Button btnBack;
     }
 }

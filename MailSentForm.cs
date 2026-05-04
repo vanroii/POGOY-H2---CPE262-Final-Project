@@ -68,7 +68,7 @@ namespace POGOY_H2___CPE262_Final_Project
             lblReceiver.Text = "To: " + item.Sender;
             lblSubject.Text = item.Subject;
             lblDate.Text = item.DateSent.ToString("MMMM dd, yyyy hh:mm tt");
-            txtBody.Text = item.Body;
+            lblBody.Text = item.Body;
 
             selectedMailId = Convert.ToInt32(item.Tag);
         }
@@ -101,7 +101,7 @@ namespace POGOY_H2___CPE262_Final_Project
             MessageBox.Show("Mail deleted!");
 
             selectedMailId = 0;
-            txtBody.Clear();
+            lblBody.Text = "";
             lblSubject.Text = "";
             lblSender.Text = "";
             lblReceiver.Text = "";
@@ -109,6 +109,11 @@ namespace POGOY_H2___CPE262_Final_Project
 
             pnlDetails.Hide();
             LoadSentMails();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

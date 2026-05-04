@@ -95,6 +95,7 @@
             // 
             // txtAgeMax
             // 
+            txtAgeMax.BackColor = Color.White;
             txtAgeMax.Location = new Point(752, 374);
             txtAgeMax.Name = "txtAgeMax";
             txtAgeMax.ReadOnly = true;
@@ -103,6 +104,7 @@
             // 
             // txtAgeMin
             // 
+            txtAgeMin.BackColor = Color.White;
             txtAgeMin.Location = new Point(752, 329);
             txtAgeMin.Name = "txtAgeMin";
             txtAgeMin.ReadOnly = true;
@@ -111,6 +113,7 @@
             // 
             // txtExperience
             // 
+            txtExperience.BackColor = Color.White;
             txtExperience.Location = new Point(752, 284);
             txtExperience.Name = "txtExperience";
             txtExperience.ReadOnly = true;
@@ -119,6 +122,7 @@
             // 
             // txtCategory
             // 
+            txtCategory.BackColor = Color.White;
             txtCategory.Location = new Point(693, 86);
             txtCategory.Name = "txtCategory";
             txtCategory.ReadOnly = true;
@@ -187,6 +191,7 @@
             // 
             // txtSkills
             // 
+            txtSkills.BackColor = Color.White;
             txtSkills.Location = new Point(230, 284);
             txtSkills.Multiline = true;
             txtSkills.Name = "txtSkills";
@@ -282,7 +287,7 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.BackgroundImage = Properties.Resources.Sleek_Black_Gradient_Border_Style_PNG;
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Location = new Point(-1, -1);
             pictureBox1.Name = "pictureBox1";

@@ -66,7 +66,12 @@ namespace POGOY_H2___CPE262_Final_Project
             lblReceiver.Text = "To: " + Session.UserName;
             lblSubject.Text = item.Subject;
             lblDate.Text = item.DateSent.ToString("MMMM dd, yyyy hh:mm tt");
-            txtBody.Text = item.Body;
+            lblBody.Text = item.Body ?? string.Empty;
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
