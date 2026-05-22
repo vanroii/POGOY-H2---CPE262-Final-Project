@@ -16,21 +16,17 @@ namespace POGOY_H2___CPE262_Final_Project
         public string UserName { get; set; }
         public string Role { get; set; }
 
-
         public event EventHandler ChatClicked;
 
         public ChatItem(int id, string name, string role)
         {
             InitializeComponent();
-
             UserID = id;
             UserName = name;
             Role = role;
-
             lblName.Text = name;
             lblRole.Text = role;
             lblUserID.Text = "ID: " + id;
-
             this.Click += ClickAll;
             foreach (Control c in this.Controls)
                 c.Click += ClickAll;

@@ -23,28 +23,20 @@ namespace POGOY_H2___CPE262_Final_Project
             using (OleDbConnection con = DBConnection.GetConnection())
             {
                 con.Open();
-
                 string query = "INSERT INTO Users (Name, Email, [Password], Role) VALUES (?, ?, ?, ?)";
                 OleDbCommand cmd = new OleDbCommand(query, con);
-
                 cmd.Parameters.AddWithValue("?", txtName.Text);
                 cmd.Parameters.AddWithValue("?", txtEmail.Text);
-
                 string hashedPassword = PasswordHelper.HashPassword(txtPassword.Text);
                 cmd.Parameters.AddWithValue("?", hashedPassword);
-
                 cmd.Parameters.AddWithValue("?", cmbRole.SelectedItem.ToString());
-
                 if (cmbRole.SelectedIndex == -1)
                 {
                     MessageBox.Show("Please select a role!");
                     return;
                 }
-
                 cmd.ExecuteNonQuery();
-
                 MessageBox.Show("Account Created Successfully!");
-
                 new Form1().Show();
                 this.Close();
             }

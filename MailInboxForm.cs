@@ -21,27 +21,19 @@ namespace POGOY_H2___CPE262_Final_Project
         private void MailInboxForm_Load(object sender, EventArgs e)
         {
             LoadInbox();
-
             pnlDetails.Hide();
         }
 
         private void LoadInbox()
         {
             flpInbox.Controls.Clear();
-
             using (OleDbConnection con = DBConnection.GetConnection())
             {
                 con.Open();
-
-                string query = @"SELECT U.Name AS Sender, M.Subject, M.Body, M.DateSent FROM Mails M
-                                INNER JOIN Users U ON M.SenderID = U.UserID
-                                WHERE M.ReceiverID = ?
-                                ORDER BY M.DateSent DESC";
-
+                string query = @"SELECT U.Name AS Sender, M.Subject, M.Body, M.DateSent FROM Mails M INNER JOIN Users U ON M.SenderID = U.UserID WHERE M.ReceiverID = ? ORDER BY M.DateSent DESC";
                 OleDbCommand cmd = new OleDbCommand(query, con);
                 cmd.Parameters.AddWithValue("?", Session.UserID);
                 OleDbDataReader reader = cmd.ExecuteReader();
-
                 while (reader.Read())
                 {
                     MailItem item = new MailItem(
@@ -50,7 +42,6 @@ namespace POGOY_H2___CPE262_Final_Project
                         reader["Body"].ToString(),
                         Convert.ToDateTime(reader["DateSent"])
                     );
-
                     item.MailClicked += MailItem_Clicked;
                     flpInbox.Controls.Add(item);
                 }
@@ -60,7 +51,6 @@ namespace POGOY_H2___CPE262_Final_Project
         private void MailItem_Clicked(object sender, EventArgs e)
         {
             pnlDetails.Show();
-
             MailItem item = (MailItem)sender;
             lblSender.Text = "From: " + item.Sender;
             lblReceiver.Text = "To: " + Session.UserName;

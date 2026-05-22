@@ -20,11 +20,9 @@ namespace POGOY_H2___CPE262_Final_Project
         private void LoadForm(Form form)
         {
             panelMain.Controls.Clear();
-
             form.TopLevel = false;
             form.FormBorderStyle = FormBorderStyle.None;
             form.Dock = DockStyle.Fill;
-
             panelMain.Controls.Add(form);
             form.Show();
         }

@@ -26,13 +26,10 @@ namespace POGOY_H2___CPE262_Final_Project
             using (OleDbConnection con = DBConnection.GetConnection())
             {
                 con.Open();
-
                 string query = "SELECT * FROM Jobs WHERE JobID = ?";
                 OleDbCommand cmd = new OleDbCommand(query, con);
                 cmd.Parameters.AddWithValue("?", jobId);
-
                 OleDbDataReader reader = cmd.ExecuteReader();
-
                 if (reader.Read())
                 {
                     cmbCategory.Text = reader["Category"].ToString();
@@ -52,10 +49,8 @@ namespace POGOY_H2___CPE262_Final_Project
             using (OleDbConnection con = DBConnection.GetConnection())
             {
                 con.Open();
-
                 string query = "UPDATE Jobs SET Category=?, Title=?, Description=?, Location=?, RequiredSkills=?, MinExperience=?, AgeMin=?, AgeMax=? WHERE JobID=?";
                 OleDbCommand cmd = new OleDbCommand(query, con);
-
                 cmd.Parameters.AddWithValue("?", cmbCategory.Text);
                 cmd.Parameters.AddWithValue("?", txtTitle.Text);
                 cmd.Parameters.AddWithValue("?", txtDescription.Text);
@@ -65,9 +60,7 @@ namespace POGOY_H2___CPE262_Final_Project
                 cmd.Parameters.AddWithValue("?", numAgeMin.Value);
                 cmd.Parameters.AddWithValue("?", numAgeMax.Value);
                 cmd.Parameters.AddWithValue("?", jobId);
-
                 cmd.ExecuteNonQuery();
-
                 MessageBox.Show("Job Updated Successfully!");
                 this.Close();
             }

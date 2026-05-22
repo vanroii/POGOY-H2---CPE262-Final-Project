@@ -24,16 +24,12 @@ namespace POGOY_H2___CPE262_Final_Project
             using (OleDbConnection con = DBConnection.GetConnection())
             {
                 con.Open();
-
                 string query = "SELECT * FROM qryJobApplicantCount WHERE EmployerID=?";
-
                 OleDbCommand cmd = new OleDbCommand(query, con);
                 cmd.Parameters.AddWithValue("?", Session.UserID);
-
                 OleDbDataAdapter da = new OleDbDataAdapter(cmd);
                 System.Data.DataTable dt = new System.Data.DataTable();
                 da.Fill(dt);
-
                 dgvJobs.DataSource = dt;
                 dgvJobs.Columns["EmployerID"].Visible = false;
             }
@@ -43,7 +39,6 @@ namespace POGOY_H2___CPE262_Final_Project
         {
             lblWelcome.Text = $"{Session.UserName}";
             lblUserID.Text = "Employer ID: " + Session.UserID;
-
             LoadJobs();
         }
 
@@ -74,7 +69,6 @@ namespace POGOY_H2___CPE262_Final_Project
 
             EditJobForm form = new EditJobForm(jobId);
             form.ShowDialog();
-
             LoadJobs();
         }
 
@@ -99,12 +93,10 @@ namespace POGOY_H2___CPE262_Final_Project
             using (OleDbConnection con = DBConnection.GetConnection())
             {
                 con.Open();
-
                 string deleteApps = "DELETE FROM Applications WHERE JobID=?";
                 OleDbCommand cmd1 = new OleDbCommand(deleteApps, con);
                 cmd1.Parameters.AddWithValue("?", jobId);
                 cmd1.ExecuteNonQuery();
-
                 string deleteJob = "DELETE FROM Jobs WHERE JobID=?";
                 OleDbCommand cmd2 = new OleDbCommand(deleteJob, con);
                 cmd2.Parameters.AddWithValue("?", jobId);
@@ -129,12 +121,6 @@ namespace POGOY_H2___CPE262_Final_Project
             form.ShowDialog();
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            new Form1().Show();
-            this.Close();
-        }
-
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtSearch.Text))
@@ -146,21 +132,16 @@ namespace POGOY_H2___CPE262_Final_Project
             using (OleDbConnection con = DBConnection.GetConnection())
             {
                 con.Open();
-
                 string keyword = txtSearch.Text.Trim();
-
                 string query = "SELECT * FROM qryJobApplicantCount WHERE EmployerID=? AND (Title LIKE ? OR Location LIKE ? OR Category LIKE ?)";
                 OleDbCommand cmd = new OleDbCommand(query, con);
-
                 cmd.Parameters.AddWithValue("?", Session.UserID);
                 cmd.Parameters.AddWithValue("?", "%" + keyword + "%");
                 cmd.Parameters.AddWithValue("?", "%" + keyword + "%");
                 cmd.Parameters.AddWithValue("?", "%" + keyword + "%");
-
                 OleDbDataAdapter da = new OleDbDataAdapter(cmd);
                 System.Data.DataTable dt = new System.Data.DataTable();
                 da.Fill(dt);
-
                 dgvJobs.DataSource = dt;
                 dgvJobs.Columns["EmployerID"].Visible = false;
             }
@@ -176,6 +157,12 @@ namespace POGOY_H2___CPE262_Final_Project
         {
             ChatForm form = new ChatForm();
             form.ShowDialog();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            new Form1().Show();
+            this.Close();
         }
     }
 }

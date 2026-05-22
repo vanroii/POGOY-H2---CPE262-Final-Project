@@ -29,12 +29,10 @@ namespace POGOY_H2___CPE262_Final_Project
             ChartArea area = new ChartArea();
 
             area.BackColor = Color.Transparent;
-
             area.AxisX.LabelStyle.ForeColor = Color.White;
             area.AxisY.LabelStyle.ForeColor = Color.White;
             area.AxisX.TitleForeColor = Color.White;
             area.AxisY.TitleForeColor = Color.White;
-
             area.AxisX.MajorGrid.LineColor = Color.FromArgb(40, Color.White);
             area.AxisY.MajorGrid.LineColor = Color.FromArgb(40, Color.White);
 
@@ -70,7 +68,6 @@ namespace POGOY_H2___CPE262_Final_Project
                     while (reader.Read())
                     {
                         string x = reader[xField]?.ToString() ?? string.Empty;
-
                         double y = 0;
                         object yObj = reader[yField];
                         if (yObj != DBNull.Value && yObj != null)
@@ -93,7 +90,6 @@ namespace POGOY_H2___CPE262_Final_Project
                                     break;
                             }
                         }
-
                         series.Points.AddXY(x, y);
                     }
                 }
@@ -102,19 +98,16 @@ namespace POGOY_H2___CPE262_Final_Project
                 lg.ForeColor = Color.White;
             for (int i = 0; i < chartAnalytics.Titles.Count; i++)
                 chartAnalytics.Titles[i].ForeColor = Color.White;
-
             var ca = chartAnalytics.ChartAreas[0];
             ca.AxisX.Interval = 1;
             ca.AxisX.LabelStyle.Angle = 0;
             ca.AxisY.Minimum = 0;
             ca.AxisX.IsMarginVisible = false;
-
             int count = chartAnalytics.Series[seriesName].Points.Count;
             double min = 0.5;
             double max = Math.Max(1.5, count + 0.5);
             ca.AxisX.Minimum = min;
             ca.AxisX.Maximum = max;
-
             chartAnalytics.Invalidate();
         }
 

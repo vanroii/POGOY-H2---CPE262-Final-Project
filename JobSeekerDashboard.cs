@@ -22,7 +22,6 @@ namespace POGOY_H2___CPE262_Final_Project
         {
             lblWelcome.Text = $"{Session.UserName}";
             lblUserID.Text = "Job Seeker ID: " + Session.UserID;
-
             CheckProfile();
             LoadMatchingJobs();
         }
@@ -32,20 +31,15 @@ namespace POGOY_H2___CPE262_Final_Project
             using (OleDbConnection con = DBConnection.GetConnection())
             {
                 con.Open();
-
                 string query = "SELECT COUNT(*) FROM JobSeekerProfile WHERE UserID=?";
                 OleDbCommand cmd = new OleDbCommand(query, con);
                 cmd.Parameters.AddWithValue("?", Session.UserID);
-
                 int count = Convert.ToInt32(cmd.ExecuteScalar());
-
                 if (count == 0)
                 {
                     MessageBox.Show("Please complete your profile first!");
-
                     JobSeekerProfileForm form = new JobSeekerProfileForm();
                     form.ShowDialog();
-
                     LoadMatchingJobs();
                 }
             }
@@ -56,20 +50,16 @@ namespace POGOY_H2___CPE262_Final_Project
             using (OleDbConnection con = DBConnection.GetConnection())
             {
                 con.Open();
-
                 string profileQuery = "SELECT * FROM JobSeekerProfile WHERE UserID=?";
                 OleDbCommand profileCmd = new OleDbCommand(profileQuery, con);
                 profileCmd.Parameters.AddWithValue("?", Session.UserID);
-
                 OleDbDataReader reader = profileCmd.ExecuteReader();
-
                 if (reader.Read())
                 {
                     string category = reader["PreferredCategory"].ToString();
                     string skills = reader["Skills"].ToString();
                     int experience = Convert.ToInt32(reader["ExperienceYears"]);
                     int age = Convert.ToInt32(reader["Age"]);
-
                     reader.Close();
 
                     string jobQuery;
@@ -78,16 +68,13 @@ namespace POGOY_H2___CPE262_Final_Project
                     {
                         jobQuery = @"SELECT * FROM Jobs WHERE RequiredSkills LIKE ? AND MinExperience <= ? AND AgeMin <= ? AND AgeMax >= ?";
                         OleDbCommand jobCmd = new OleDbCommand(jobQuery, con);
-
                         jobCmd.Parameters.AddWithValue("?", "%" + skills + "%");
                         jobCmd.Parameters.AddWithValue("?", experience);
                         jobCmd.Parameters.AddWithValue("?", age);
                         jobCmd.Parameters.AddWithValue("?", age);
-
                         OleDbDataAdapter da = new OleDbDataAdapter(jobCmd);
                         System.Data.DataTable dt = new System.Data.DataTable();
                         da.Fill(dt);
-
                         dgvJobs.DataSource = dt;
                         dgvJobs.Columns["Description"].Visible = false;
                         dgvJobs.Columns["RequiredSkills"].Visible = false;
@@ -96,17 +83,14 @@ namespace POGOY_H2___CPE262_Final_Project
                     {
                         jobQuery = @"SELECT * FROM Jobs WHERE Category = ? AND RequiredSkills LIKE ? AND MinExperience <= ? AND AgeMin <= ? AND AgeMax >= ?";
                         OleDbCommand jobCmd = new OleDbCommand(jobQuery, con);
-
                         jobCmd.Parameters.AddWithValue("?", category);
                         jobCmd.Parameters.AddWithValue("?", "%" + skills + "%");
                         jobCmd.Parameters.AddWithValue("?", experience);
                         jobCmd.Parameters.AddWithValue("?", age);
                         jobCmd.Parameters.AddWithValue("?", age);
-
                         OleDbDataAdapter da = new OleDbDataAdapter(jobCmd);
                         System.Data.DataTable dt = new System.Data.DataTable();
                         da.Fill(dt);
-
                         dgvJobs.DataSource = dt;
                         dgvJobs.Columns["Description"].Visible = false;
                         dgvJobs.Columns["RequiredSkills"].Visible = false;
@@ -135,17 +119,10 @@ namespace POGOY_H2___CPE262_Final_Project
             form.ShowDialog();
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            new Form1().Show();
-            this.Close();
-        }
-
         private void btnProfile_Click(object sender, EventArgs e)
         {
             JobSeekerProfileForm form = new JobSeekerProfileForm();
             form.ShowDialog();
-
             LoadMatchingJobs();
         }
 
@@ -160,44 +137,33 @@ namespace POGOY_H2___CPE262_Final_Project
             using (OleDbConnection con = DBConnection.GetConnection())
             {
                 con.Open();
-
                 string keyword = txtSearch.Text.Trim();
-
                 string profileQuery = "SELECT * FROM JobSeekerProfile WHERE UserID=?";
                 OleDbCommand profileCmd = new OleDbCommand(profileQuery, con);
                 profileCmd.Parameters.AddWithValue("?", Session.UserID);
-
                 OleDbDataReader reader = profileCmd.ExecuteReader();
-
                 if (reader.Read())
                 {
                     string category = reader["PreferredCategory"].ToString();
                     string skills = reader["Skills"].ToString();
                     int experience = Convert.ToInt32(reader["ExperienceYears"]);
                     int age = Convert.ToInt32(reader["Age"]);
-
                     reader.Close();
-
                     string jobQuery;
-
                     if (category == "None")
                     {
                         jobQuery = @"SELECT * FROM Jobs WHERE (RequiredSkills LIKE ? AND MinExperience <= ? AND AgeMin <= ? AND AgeMax >= ?) AND (Title LIKE ? OR Location LIKE ? OR Category LIKE ?)";
                         OleDbCommand jobCmd = new OleDbCommand(jobQuery, con);
-
                         jobCmd.Parameters.AddWithValue("?", "%" + skills + "%");
                         jobCmd.Parameters.AddWithValue("?", experience);
                         jobCmd.Parameters.AddWithValue("?", age);
                         jobCmd.Parameters.AddWithValue("?", age);
-
                         jobCmd.Parameters.AddWithValue("?", "%" + keyword + "%");
                         jobCmd.Parameters.AddWithValue("?", "%" + keyword + "%");
                         jobCmd.Parameters.AddWithValue("?", "%" + keyword + "%");
-
                         OleDbDataAdapter da = new OleDbDataAdapter(jobCmd);
                         DataTable dt = new DataTable();
                         da.Fill(dt);
-
                         dgvJobs.DataSource = dt;
                         dgvJobs.Columns["Description"].Visible = false;
                         dgvJobs.Columns["RequiredSkills"].Visible = false;
@@ -206,21 +172,17 @@ namespace POGOY_H2___CPE262_Final_Project
                     {
                         jobQuery = @"SELECT * FROM Jobs WHERE (Category = ? AND RequiredSkills LIKE ? AND MinExperience <= ? AND AgeMin <= ? AND AgeMax >= ?) AND (Title LIKE ? OR Location LIKE ? OR Category LIKE ?)";
                         OleDbCommand jobCmd = new OleDbCommand(jobQuery, con);
-
                         jobCmd.Parameters.AddWithValue("?", category);
                         jobCmd.Parameters.AddWithValue("?", "%" + skills + "%");
                         jobCmd.Parameters.AddWithValue("?", experience);
                         jobCmd.Parameters.AddWithValue("?", age);
                         jobCmd.Parameters.AddWithValue("?", age);
-
                         jobCmd.Parameters.AddWithValue("?", "%" + keyword + "%");
                         jobCmd.Parameters.AddWithValue("?", "%" + keyword + "%");
                         jobCmd.Parameters.AddWithValue("?", "%" + keyword + "%");
-
                         OleDbDataAdapter da = new OleDbDataAdapter(jobCmd);
                         System.Data.DataTable dt = new System.Data.DataTable();
                         da.Fill(dt);
-
                         dgvJobs.DataSource = dt;
                         dgvJobs.Columns["Description"].Visible = false;
                         dgvJobs.Columns["RequiredSkills"].Visible = false;
@@ -239,6 +201,12 @@ namespace POGOY_H2___CPE262_Final_Project
         {
             ChatForm form = new ChatForm();
             form.ShowDialog();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            new Form1().Show();
+            this.Close();
         }
     }
 }

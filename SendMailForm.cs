@@ -27,23 +27,15 @@ namespace POGOY_H2___CPE262_Final_Project
             using (OleDbConnection con = DBConnection.GetConnection())
             {
                 con.Open();
-
-                string query = @"
-            INSERT INTO Mails
-            (SenderID, ReceiverID, Subject, Body, DateSent)
-            VALUES (?, ?, ?, ?, ?)";
-
+                string query = @"INSERT INTO Mails (SenderID, ReceiverID, Subject, Body, DateSent) VALUES (?, ?, ?, ?, ?)";
                 OleDbCommand cmd = new OleDbCommand(query, con);
-
                 cmd.Parameters.AddWithValue("?", senderId);
                 cmd.Parameters.AddWithValue("?", receiverId);
                 cmd.Parameters.AddWithValue("?", txtSubject.Text);
                 cmd.Parameters.AddWithValue("?", txtBody.Text);
                 cmd.Parameters.Add("DateSent", OleDbType.Date).Value = DateTime.Now;
-
                 cmd.ExecuteNonQuery();
             }
-
             MessageBox.Show("Mail sent!");
             this.Close();
         }

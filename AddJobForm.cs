@@ -23,10 +23,8 @@ namespace POGOY_H2___CPE262_Final_Project
             using (OleDbConnection con = DBConnection.GetConnection())
             {
                 con.Open();
-
                 string query = @"INSERT INTO Jobs (Category, Title, Description, Location, RequiredSkills, MinExperience, AgeMin, AgeMax, EmployerID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 OleDbCommand cmd = new OleDbCommand(query, con);
-
                 cmd.Parameters.AddWithValue("?", cmbCategory.Text);
                 cmd.Parameters.AddWithValue("?", txtTitle.Text);
                 cmd.Parameters.AddWithValue("?", txtDescription.Text);
@@ -36,9 +34,7 @@ namespace POGOY_H2___CPE262_Final_Project
                 cmd.Parameters.AddWithValue("?", numAgeMin.Value);
                 cmd.Parameters.AddWithValue("?", numAgeMax.Value);
                 cmd.Parameters.AddWithValue("?", Session.UserID);
-
                 cmd.ExecuteNonQuery();
-
                 MessageBox.Show("Job Added Successfully!");
                 this.Close();
             }

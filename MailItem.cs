@@ -22,17 +22,14 @@ namespace POGOY_H2___CPE262_Final_Project
         public MailItem(string sender, string subject, string body, DateTime date)
         {
             InitializeComponent();
-
             Sender = sender;
             Subject = subject;
             Body = body;
             DateSent = date;
-
             lblSender.Text = sender;
             lblSubject.Text = subject;
             lblPreview.Text = body.Length > 35 ? body.Substring(0, 35) + "..." : body;
             lblDate.Text = date.ToString("MMM dd");
-
             this.Click += ClickAll;
             foreach (Control c in this.Controls)
                 c.Click += ClickAll;
